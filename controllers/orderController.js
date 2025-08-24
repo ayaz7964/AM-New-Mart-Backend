@@ -16,9 +16,9 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
 
     const orderExist = await Order.findOne({ paymentInfo });
 
-    if (orderExist) {
-        return next(new ErrorHandler("Order Already Placed", 400));
-    }
+    // if (orderExist) {
+    //     return next(new ErrorHandler("Order Already Placed", 400));
+    // }
 
     const order = await Order.create({
         shippingInfo,
